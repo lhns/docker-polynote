@@ -16,9 +16,9 @@ RUN chmod +x "/usr/local/bin/cleanimage"
 
 RUN yum install -y \
       python3-devel \
- && pip3 install
-      jep
-      jedi
+ && pip3 install \
+      jep \
+      jedi \
       virtualenv \
  && cleanimage
 
