@@ -7,15 +7,17 @@ ENV POLYNOTE_NAME polynote
 ENV POLYNOTE_URL https://github.com/polynote/polynote/releases/download/$POLYNOTE_VERSION/${POLYNOTE_NAME}-dist.tar.gz
 ENV POLYNOTE_HOME /opt/$POLYNOTE_NAME
 
-ENV JAVA_OPTS -Xmx2G
 
+ADD ["https://raw.githubusercontent.com/LolHens/docker-tools/master/bin/cleanimage", "/usr/local/bin/"]
+RUN chmod +x "/usr/local/bin/cleanimage"
 
 RUN yum install -y \
       python3-devel \
  && pip3 install \
       jep \
       jedi \
-      virtualenv
+      virtualenv \
+ && cleanimage
 
 RUN cd /opt \
  && curl -L $POLYNOTE_URL | tar -xzf -
