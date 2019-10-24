@@ -31,4 +31,8 @@ RUN cd /tmp \
 
 WORKDIR $POLYNOTE_HOME
 
+COPY ["entrypoint", "/entrypoint"]
+RUN chmod 755 /entrypoint
+ENTRYPOINT ["/entrypoint"]
+
 CMD ./polynote
