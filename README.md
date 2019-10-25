@@ -27,4 +27,7 @@ services:
       - "8192:8192"
     volumes:
       - notebooks:/opt/polynote/notebooks
+
+volumes:
+  notebooks:
 ```
