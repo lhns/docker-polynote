@@ -19,8 +19,6 @@ RUN yum install -y \
  && pip3 install \
       jep \
       jedi \
-      numpy \
-      pandas \
       virtualenv \
  && cleanimage
 
