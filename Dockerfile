@@ -28,10 +28,9 @@ RUN cd /opt \
  && curl -L $POLYNOTE_URL | tar -xzf -
 
 
-WORKDIR $POLYNOTE_HOME
-
 COPY ["entrypoint", "/entrypoint"]
 RUN chmod 755 /entrypoint
 ENTRYPOINT ["/entrypoint"]
 
-CMD ./polynote
+WORKDIR $POLYNOTE_HOME
+CMD ./$POLYNOTE_NAME
